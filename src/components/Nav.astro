@@ -1,0 +1,38 @@
+---
+//Imports
+import { Image } from "@astrojs/image/components";
+---
+
+<nav class="container">
+	<div class="text__container">
+		<a class="text-home" href="/">Jorge García</a>
+	</div>
+	<div class="search__container">
+		<Image
+			class="search-image"
+			src="../images/search-icon.png"
+			alt="Ícono de búsqueda"
+			height={18}
+			width={18}
+			aspectRatio="1:1"
+			format="webp"
+			quality={80}
+		/>
+	</div>
+</nav>
+<style>
+	nav{
+		padding: 1rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	a {
+		color: var(--color-black);
+		font-size: 1.5rem;
+	}
+	a::after {
+		color: var(--color-red);
+		content: ".";
+	}
+</style>
