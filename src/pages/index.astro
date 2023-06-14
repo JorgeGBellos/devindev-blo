@@ -1,5 +1,6 @@
 ---
 //Imports
+import { Image } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -10,5 +11,138 @@ import Footer from "../components/Footer.astro";
     description="Espacio de escritura personal. Nada más que mi lugar para presentarme al mundo"
 >
     <Nav />
+    <section class="section__welcome">
+        <div class="text__container">
+            <div class="divider"></div>
+            <h1>Bienvenidos a mi blog personal</h1>
+        </div>
+        <div class="carousel__container"></div>
+        <div class="content__container">
+            <p class="author-text">
+                Hola! Bienvenid@ al espacio en el que comparto algunas de mis
+                ideas, conflictos personales, dudas existenciales y cualquier
+                otra cosa que no entre en esas 3 categorías. Esto es parte de lo
+                que soy.
+            </p>
+            <div class="author-profile">
+                <Image
+                    class="author-image"
+                    src="../images/kakashi.jpg"
+                    alt="Ícono del autor - Kakashi niño"
+                    height={48}
+                    width={48}
+                    aspectRatio="1:1"
+                    format="webp"
+                    quality={80}
+                />
+                <p class="author-name">@devindev</p>
+            </div>
+        </div>
+    </section>
+    <section class="section-about">
+        <div class="about__container">
+            <h2>Acerca mío</h2>
+            <p>
+                Hola! Mi nombre es Jorge Armando García Bellos. Soy un Ingeniero
+                de software mexicano, desarrollador web por profesión y geek de
+                nacimiento.
+                <br>
+                Esto no es más que un espacio para lanzar mis ideas
+                al mundo, y en sí mismo, el resultado de otra idea: tener mi
+                propio blog.
+                <br>
+                Al final, esto es por y para mí, si alguien más
+                está leyendo esto, lamento no incluirte, pero te invito a quedarte, estás en tu casa.
+            </p>
+            <Image
+                class="search-image"
+                src="../images/saitama-about.png"
+                alt="Ícono de búsqueda"
+                height={187}
+                width={250}
+                aspectRatio="1:1"
+                format="webp"
+                quality={80}
+            />
+        </div>
+        <div class="background__container"></div>
+    </section>
     <Footer />
 </Layout>
+<style>
+    /* Section Welcome */
+    section.section__welcome {
+        padding: 50px 0 2rem 0;
+        height: 100vh;
+        box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.25);
+    }
+    div.text__container .divider {
+        height: 4px;
+        width: 48px;
+        margin: 0 auto;
+
+        background-color: var(--color-red);
+    }
+    div.text__container h1 {
+        text-align: center;
+    }
+    /* Author info*/
+    p.author-text {
+        max-width: 50%;
+        margin: 0 auto;
+
+        text-align: justify;
+    }
+    div.content__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+    }
+    div.author-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+    div.author-profile .author-image {
+        border-radius: 50%;
+    }
+    div.author-profile .author-name {
+        font-weight: bold;
+    }
+    @media screen and (max-width: 1024px) {
+        p.author-text {
+            max-width: 80%;
+        }
+    }
+    /* Section about */
+    section.section-about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 700px;
+    }
+    div.about__container {
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap:2rem;
+
+        width: 40%;
+    }
+    div.about__container h2 {
+    }
+
+    div.about__container p {
+        width: 60%;
+    }
+
+    div.background__container {
+        width: 60%;
+    }
+</style>

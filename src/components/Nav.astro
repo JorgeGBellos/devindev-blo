@@ -21,18 +21,32 @@ import { Image } from "@astrojs/image/components";
 	</div>
 </nav>
 <style>
-	nav{
-		padding: 1rem 0;
+	nav {
+		position: fixed;
+		top:0;
+		right:0;
+		left:0;
+
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		height: 50px;
+		
+		background-color: white;
 	}
-	a {
-		color: var(--color-black);
+	a.text-home {
 		font-size: 1.5rem;
+		color: var(--color-black);
 	}
-	a::after {
+	a.text-home::after {
 		color: var(--color-red);
 		content: ".";
+	}
+
+	div.search__container{
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

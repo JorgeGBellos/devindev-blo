@@ -9,9 +9,9 @@ import { Image } from "@astrojs/image/components";
         <div class="block-divider"></div>
         <div class="block-content">
             Ingeniero de software mexicano.
-            <br>
+            <br />
             Desarrollador web de profesión.
-            <br>
+            <br />
             Geek de nacimiento.
         </div>
     </div>
@@ -32,16 +32,18 @@ import { Image } from "@astrojs/image/components";
             </ul>
         </div>
     </div>
-    <Image
-        class="footer-image"
-        src="../images/saitama-footer.png"
-        alt="Imagen de footer - Saitama face"
-        height={120}
-        width={120}
-        aspectRatio="1:1"
-        format="webp"
-        quality={80}
-    />
+    <div class="block__container img-container">
+        <Image
+            class="footer-image"
+            src="../images/saitama-footer.png"
+            alt="Imagen de footer - Saitama face"
+            height={120}
+            width={120}
+            aspectRatio="1:1"
+            format="webp"
+            quality={80}
+        />
+    </div>
 </footer>
 <style>
     /*
@@ -64,12 +66,12 @@ import { Image } from "@astrojs/image/components";
         color: var(--color-white);
     }
 
-    div.block__container{
-        padding:1rem;
-        min-width:300px;
+    div.block__container {
+        padding: 1rem 1rem 1rem 2rem;
+        min-width: 300px;
     }
 
-    div.block-divider{
+    div.block-divider {
         height: 4px;
         width: 35px;
         margin: 1rem 0 2.5rem 0;
@@ -88,5 +90,15 @@ import { Image } from "@astrojs/image/components";
     img.footer-image {
         transform: scaleX(-1);
         filter: drop-shadow(0px 1px 4px #ffffff);
+    }
+    /* Media queries (Small devices) */
+    @media screen and (max-width: 600px) {
+        div.img-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            padding: 1rem;
+        }
     }
 </style>
