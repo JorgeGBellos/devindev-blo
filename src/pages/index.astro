@@ -46,13 +46,12 @@ import Footer from "../components/Footer.astro";
                 Hola! Mi nombre es Jorge Armando García Bellos. Soy un Ingeniero
                 de software mexicano, desarrollador web por profesión y geek de
                 nacimiento.
-                <br>
-                Esto no es más que un espacio para lanzar mis ideas
-                al mundo, y en sí mismo, el resultado de otra idea: tener mi
-                propio blog.
-                <br>
-                Al final, esto es por y para mí, si alguien más
-                está leyendo esto, lamento no incluirte, pero te invito a quedarte, estás en tu casa.
+                <br />
+                Esto no es más que un espacio para lanzar mis ideas al mundo, y en
+                sí mismo, el resultado de otra idea: tener mi propio blog.
+                <br />
+                Al final, esto es por y para mí, si alguien más está leyendo esto,
+                lamento no incluirte, pero te invito a quedarte, estás en tu casa.
             </p>
             <Image
                 class="search-image"
@@ -72,6 +71,8 @@ import Footer from "../components/Footer.astro";
 <style>
     /* Section Welcome */
     section.section__welcome {
+        position: relative;
+
         padding: 50px 0 2rem 0;
         height: 100vh;
         box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.25);
@@ -120,29 +121,53 @@ import Footer from "../components/Footer.astro";
     /* Section about */
     section.section-about {
         display: flex;
-        justify-content: center;
-        align-items: center;
 
-        min-height: 700px;
+        min-height: 750px;
     }
     div.about__container {
-        padding: 2rem 0;
+        padding: 3rem 0 0 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap:2rem;
+        gap: 2rem;
 
         width: 40%;
-    }
-    div.about__container h2 {
-    }
 
+        background: var(--color-white);
+    }
     div.about__container p {
         width: 60%;
     }
-
     div.background__container {
-        width: 60%;
+        flex: 1;
+
+        background-image: url("/images/about-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+    }
+    @media screen and (max-width: 1024px) {
+        div.about__container {
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        section.section-about {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 900px;
+            background-image: url("/images/about-background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div.about__container {
+            width: 90%;
+            border-radius: 5px;
+        }
+        div.background__container {
+            display: none;
+        }
     }
 </style>
