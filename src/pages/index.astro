@@ -1,6 +1,8 @@
 ---
 //Imports
+import { GITHUB, LINKEDIN, WEBSITE } from "../js/constants";
 import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -39,7 +41,7 @@ import Footer from "../components/Footer.astro";
             </div>
         </div>
     </section>
-    <section class="section-about">
+    <section class="section__about">
         <div class="about__container">
             <h2>Acerca mío</h2>
             <p>
@@ -66,8 +68,31 @@ import Footer from "../components/Footer.astro";
         </div>
         <div class="background__container"></div>
     </section>
-    <Footer />
+    <section class="section__findme">
+        <div class="findme__container">
+            <h3 class="findme-title">FIND ME</h3>
+            <ul class="findme-links">
+                <a href={GITHUB}>
+                    <li class="link-item">
+                        <Icon pack="mdi" name="github" />
+                    </li>
+                </a>
+                <a href={LINKEDIN}>
+                    <li class="link-item">
+                        <Icon pack="ri" name="linkedin-fill" />
+                    </li>
+                </a>
+                <a href={WEBSITE}>
+                    <li class="link-item">
+                        <Icon pack="zondicons" name="network" />
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </section>
 </Layout>
+<Footer />
+
 <style>
     /* Section Welcome */
     section.section__welcome {
@@ -119,8 +144,9 @@ import Footer from "../components/Footer.astro";
         }
     }
     /* Section about */
-    section.section-about {
+    section.section__about {
         display: flex;
+        justify-content: center;
 
         min-height: 750px;
     }
@@ -153,7 +179,7 @@ import Footer from "../components/Footer.astro";
         }
     }
     @media screen and (max-width: 600px) {
-        section.section-about {
+        section.section__about {
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -169,5 +195,40 @@ import Footer from "../components/Footer.astro";
         div.background__container {
             display: none;
         }
+    }
+    /* Section Find me */
+    section.section__findme {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 1rem;
+        min-height: 350px;
+        background: var(--color-red);
+    }
+    div.findme__container h3 {
+        color: var(--color-beige);
+        text-align: center;
+    }
+    div.findme__container ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    ul.findme-links a li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+
+        background: var(--color-beige);
+    }
+    ul.findme-links a li svg{
+        width:30px;
+        color:var(--color-red);
     }
 </style>
