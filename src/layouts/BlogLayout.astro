@@ -1,0 +1,78 @@
+---
+//Imports
+import { Image } from "@astrojs/image/components";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={frontmatter.description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <Nav />
+        <div class="post__container container">
+            <div class="title-container">
+                <h1>{frontmatter.title}</h1>
+                <img src={frontmatter.image.src} alt="" />
+            </div>
+            <div class="text-container">
+                <slot />
+                <div class="author-profile">
+                    <Image
+                        class="author-image"
+                        src={frontmatter.author.icon}
+                        alt="Ícono del autor - Kakashi niño"
+                        height={48}
+                        width={48}
+                        aspectRatio="1:1"
+                        format="webp"
+                        quality={80}
+                    />
+                    <p class="author-name">{frontmatter.author.name}</p>
+                </div>
+            </div>
+        </div>
+        <Footer />
+    </body>
+</html>
+<style>
+    div.post__container {
+        padding: 5rem 0 3rem 0;
+    }
+    div.title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    div.text-container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2rem 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    div.author-profile {
+        margin-top: 2rem;
+    }
+    @media screen and (max-width: 1024px) {
+        div.text-container {
+        width: 100%;
+        }
+    }
+</style>

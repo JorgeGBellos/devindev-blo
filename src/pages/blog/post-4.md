@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogLayout.astro"
 title: Why is this CSS so weird?
 date: 2024-12-09
 author: Anna Dixon

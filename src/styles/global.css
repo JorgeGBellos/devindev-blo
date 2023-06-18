@@ -62,6 +62,18 @@ a{
 a:hover{
     color: var(--color-red);
 }
+div.author-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+div.author-profile .author-image {
+    border-radius: 50%;
+}
+div.author-profile .author-name {
+    font-weight: bold;
+}
 /*
 .btn{
     width: max-content;
