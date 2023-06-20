@@ -2,9 +2,12 @@
 layout: "../../layouts/BlogLayout.astro"
 title: JavaScript SchmavaScript
 date: 2022-12-05
-author: Victoria Greenfelder
+author: {
+  icon: "../images/kakashi.jpg",
+  name: "@devindev"
+}
 image: {
-  src: "/images/post-5.jpg",
+  src: "https://i.pinimg.com/736x/b4/7d/a3/b47da34297f1f906b124dfb26e7f1284.jpg",
   alt: "A picture of a coder",
 }
 description: This is a blog post about the JavaScript programming language. Like it, love it, hate it, it's here to stay.

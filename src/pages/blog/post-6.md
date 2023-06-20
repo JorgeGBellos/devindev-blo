@@ -2,9 +2,12 @@
 layout: "../../layouts/BlogLayout.astro"
 title: Building an Astro Post Tag Component
 date: 2022-12-06
-author: Anna Dixon
+author: {
+  icon: "../images/kakashi.jpg",
+  name: "@devindev"
+}
 image: {
-  src: "/images/post-6.jpg",
+  src: "https://i.pinimg.com/736x/b4/7d/a3/b47da34297f1f906b124dfb26e7f1284.jpg",
   alt: "A picture of a coder",
 }
 description: In this project, we’ll build out a custom Astro component for post tags.

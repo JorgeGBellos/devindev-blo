@@ -2,9 +2,12 @@
 layout: "../../layouts/BlogLayout.astro"
 title: Why is this CSS so weird?
 date: 2024-12-09
-author: Anna Dixon
+author: {
+  icon: "../images/kakashi.jpg",
+  name: "@devindev"
+}
 image: {
-  src: "/images/post-4.jpg",
+  src: "https://i.pinimg.com/736x/b4/7d/a3/b47da34297f1f906b124dfb26e7f1284.jpg",
   alt: "A picture of a coder",
 }
 description: The global css file for this site is a bit different than I’d write things normally, but I’m trying to keep you from having to write a bunch of random classes.

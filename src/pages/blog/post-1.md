@@ -2,9 +2,12 @@
 layout: "../../layouts/BlogLayout.astro"
 title: A Post about Important Items Of Life
 date: 2022-11-20
-author: Darnell McClure
+author: {
+  icon: "../images/kakashi.jpg",
+  name: "@devindev"
+}
 image: {
-  src: "/images/post-1.jpg",
+  src: "https://i.pinimg.com/736x/b4/7d/a3/b47da34297f1f906b124dfb26e7f1284.jpg",
   alt: "A picture of a coder",
 }
 description: Have you ever wondered what the most important items of life are? Well, wonder no more!
